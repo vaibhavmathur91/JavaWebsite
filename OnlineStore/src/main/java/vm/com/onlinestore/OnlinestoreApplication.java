@@ -11,6 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan({
         "vm.com.onlinestore.api",
         "vm.com.onlinestore.welcome",
+        "vm.com.onlinestore.filter",
+        "vm.com.onlinestore.config",
         "vm.com.onlinestore.service"
 })
 public class OnlinestoreApplication {
