@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 public class HelloWorld {
     @RequestMapping(value="/hello", method = RequestMethod.GET)
     public String index() {
-        System.out.println("Here inside");
+        System.out.println("Inside localhost:8080/hello welcome page");
         return "onlinestore/welcome";
     }
 }

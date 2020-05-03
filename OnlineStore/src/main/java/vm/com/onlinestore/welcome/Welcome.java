@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class Welcome {
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String index() {
-        System.out.println("Here inside");
+        System.out.println("Inside localhost:8080/ welcome page");
         return "onlinestore/welcome";
     }
 }

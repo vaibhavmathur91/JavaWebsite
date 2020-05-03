@@ -6,7 +6,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan({"vm.com.onlinestore.api", "vm.com.onlinestore.welcome"})
+@ComponentScan({
+        "vm.com.onlinestore.api",
+        "vm.com.onlinestore.welcome",
+        "vm.com.onlinestore.service"
+})
 public class OnlinestoreApplication {
     public static void main(String[] args) {
         SpringApplication.run(OnlinestoreApplication.class, args);
