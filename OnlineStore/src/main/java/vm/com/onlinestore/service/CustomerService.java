@@ -1,6 +1,8 @@
 package vm.com.onlinestore.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import vm.com.onlinestore.access.CustomerDAO;
 import vm.com.onlinestore.model.Customer;
 
 import java.util.List;
@@ -9,18 +11,25 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 @Component
 public class CustomerService {
+
+    @Autowired
+    private CustomerDAO customerDAO;
+
     private List<Customer> customerList = new CopyOnWriteArrayList<>();
+
+
     private int customerIdCount = 1;
     public Customer addCustomer(Customer customer) {
-        customer.setCustomerId(customerIdCount);
-        customerList.add(customer);
-        customerIdCount +=1;
-        return customer;
-//        return customerDAO.save(customer);
+//        customer.setCustomerId(customerIdCount);
+//        customerList.add(customer);
+//        customerIdCount +=1;
+//        return customer;
+        return customerDAO.save(customer);
     }
 
     public List<Customer> getCustomers() {
-        return customerList;
+//        return customerList;
+        return customerDAO.findAll();
     }
 
     public Customer getCustomer(int customerId) {
