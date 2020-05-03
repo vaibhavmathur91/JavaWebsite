@@ -21,8 +21,13 @@ public class CustomerResource {
     }
 
     @GetMapping
-    public List<Customer> getCustomer(){
+    public List<Customer> getCustomers(){
         System.out.println("Inside GET localhost:8080/customers ");
         return customerService.getCustomers();
+    }
+
+    @GetMapping(value = "/{customerId}")
+    public Customer getCustomer(@PathVariable("customerId") int customerId) {
+        return customerService.getCustomer(customerId);
     }
 }
